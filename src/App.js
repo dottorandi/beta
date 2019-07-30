@@ -14,6 +14,11 @@ class App extends React.Component {
     if (nm.value == 'Name') { nm.value=''; }
   }
 
+  studentClick() {
+    let sd = document.getElementById('studentid');
+    if (sd.value == 'Name') { sd.value=''; }
+  }
+
   render() {
   return (
     <div className="App-component">
@@ -27,8 +32,9 @@ class App extends React.Component {
         </h3>
         <h4>Apply for the beta below</h4>
 	<form action="mailto:moody@greycart.gg?subject=Dottorandi Beta" method="post" encType="text/plain">
-	  <input defaultValue="Name" id="name" name="name" onClick={this.nameClick} type="text"></input>
-          <input defaultValue="Email" id="email" name="mail" onClick={this.emailClick} type="text"></input>
+	  <input defaultValue="Name" id="name" name="name" onClick={() => this.nameClick()} type="text"></input>
+          <input defaultValue="Email" id="email" name="mail" onClick={() => this.emailClick()} type="text"></input>
+          <input defaultValue="Student ID" id="studentid" name="studentid" onClick={() => this.studentClick()}></input>
 	  <input type="submit"></input>
 	</form>
       </div>
